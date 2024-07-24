@@ -13,6 +13,16 @@ class User extends Model
         'department_id',
         'designation_id',
         'name',
-        'Phone_number',
+        'phone_number',
     ];
+
+    public function department()
+    {
+        return $this->belongsTo(Department::class, 'department_id');
+    }
+
+    public function designation()
+    {
+        return $this->belongsTo(Designation::class, 'designation_id');
+    }
 }
